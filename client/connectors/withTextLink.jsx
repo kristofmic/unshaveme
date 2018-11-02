@@ -1,14 +1,15 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { AsYouType } from 'libphonenumber-js';
+import { AsYouType, parsePhoneNumber } from 'libphonenumber-js';
 
-import { textLink, setNumber } from '../actions';
+import { textLink, setNumber, setNumberError } from '../actions';
 
 const withRedux = connect(
   state => state,
   dispatch => ({
     textLink: (...args) => textLink(...args)(dispatch),
     setNumber: (...args) => dispatch(setNumber(...args)),
+    setNumberError: (...args) => dispatch(setNumberError(...args)),
   })
 );
 
@@ -38,7 +39,18 @@ function withTextLink(Component) {
         value: this.props.number,
       });
 
-      this.props.textLink(this.props.number);
+      try {
+        const numberInput = this.props.number.startsWith('+')
+          ? this.props.number
+          : `+1 ${this.props.number}`;
+        const phoneNumber = parsePhoneNumber(numberInput);
+        if (!phoneNumber.isValid()) {
+          throw new Error('Invalid phone number');
+        }
+        this.props.textLink(phoneNumber.number);
+      } catch (error) {
+        this.props.setNumberError(error);
+      }
     };
 
     render() {

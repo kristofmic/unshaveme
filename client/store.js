@@ -14,7 +14,13 @@ function reducer(state = initialState, action) {
     case 'SET_NUMBER':
       return {
         ...state,
+        error: undefined,
         number: payload,
+      };
+    case 'SET_NUMBER_ERROR':
+      return {
+        ...state,
+        error: payload.message,
       };
     case 'TEXT_LINK':
       return {
@@ -29,12 +35,17 @@ function reducer(state = initialState, action) {
         loading: false,
         result: payload,
       };
-    case 'TEXT_LINK_ERROR':
+    case 'TEXT_LINK_ERROR': {
+      const data = payload.response.data;
+      const error =
+        (data && data.errors && data.errors[0] && data.errors[0].detail) ||
+        'Oops! Something went wrong, please try again';
       return {
         ...state,
         loading: false,
-        error: payload,
+        error,
       };
+    }
     default:
       return state;
   }

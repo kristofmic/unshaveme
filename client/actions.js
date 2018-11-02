@@ -7,6 +7,13 @@ export function setNumber(number) {
   };
 }
 
+export function setNumberError(error) {
+  return {
+    type: 'SET_NUMBER_ERROR',
+    payload: error,
+  };
+}
+
 export function textLink(number) {
   return dispatch => {
     dispatch({

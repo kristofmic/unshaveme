@@ -7,7 +7,14 @@ import withTextLink from '../../connectors/withTextLink';
 
 class TextLinkForm extends PureComponent {
   render() {
-    const { block = false, loading, number, onChange, onSubmit } = this.props;
+    const {
+      block = false,
+      error,
+      loading,
+      number,
+      onChange,
+      onSubmit,
+    } = this.props;
 
     return (
       <form onSubmit={onSubmit}>
@@ -24,12 +31,20 @@ class TextLinkForm extends PureComponent {
             </label>
             <input
               type="tel"
-              className="form-control form-control-lg"
+              className={cx('form-control form-control-lg', {
+                'is-invalid': Boolean(error),
+              })}
               id="phoneNumber"
               placeholder="(336) 867-5309"
               onChange={onChange}
               value={number}
             />
+            <div
+              className={cx('invalid-feedback', {
+                invisible: !error,
+              })}>
+              {error || 'Oops!'}
+            </div>
           </div>
           <div
             className={cx('form-group col-12', {
