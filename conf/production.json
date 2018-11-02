@@ -1,5 +1,6 @@
 {
   "health": "production",
   "host": "unshave.com",
-  "origin": "http://unshave.com"
+  "origin": "http://unshave.com",
+  "originWWW": "http://www.unshave.com"
 }
