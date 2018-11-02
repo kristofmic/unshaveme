@@ -4,22 +4,43 @@
 <title>
   <%- title %>
 </title>
-<meta name="description" content="">
-<meta name="author" content="">
-<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
+<meta name="description" content="See yourself with facial hair before you grow it out.">
+
 <!-- IE
 __________________________________________________ -->
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 <!-- Mobile Specific Metas
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no" />
+
+<!-- Social Metas
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unshave Me">
+<meta name="twitter:description" content="See yourself with facial hair before you grow it out.">
+<meta name="twitter:creator" content="@zackhargett">
+<meta name="twitter:image" content="d30am0anjtu1dn.cloudfront.net/images/app_icon_384.jpg">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Unshave Me" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.unshave.com" />
+<meta property="og:image" content="http://d30am0anjtu1dn.cloudfront.net/images/app_icon_384.jpg" />
+<meta property="og:description" content="See yourself with facial hair before you grow it out." />
 
 <!-- FONT
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<%- include('./_styles.ejs', { css: css })%>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Merriweather:900" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/brands.css" integrity="sha384-BCEeiNUiLzxxoeYaIu7jJqq0aVVz2O2Ig4WbWEmRQ2Dx/AAxNV1wMDBXyyrxw1Zd"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/solid.css" integrity="sha384-uKQOWcYZKOuKmpYpvT0xCFAs/wE157X5Ua3H5onoRAOCNkJAMX/6QF0iXGGQV9cP"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/fontawesome.css" integrity="sha384-HU5rcgG/yUrsDGWsVACclYdzdCcn5yU8V/3V84zSrPDHwZEdjykadlgI6RHrxGrJ"
+  crossorigin="anonymous">
+<%- include('./_styles.ejs', { css: css, env: env })%>
 
 <!-- Favicon
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<link rel="icon" type="image/png" href="/public/img/favicon.png">
+<link rel="icon" type="image/png" href="http://d30am0anjtu1dn.cloudfront.net/images/favicon.png">

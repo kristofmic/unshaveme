@@ -1,0 +1,24 @@
+button.btn {
+  .loading {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    .loading-icon {
+      vertical-align: text-bottom;
+    }
+  }
+
+  .btn-body {
+    opacity: 1;
+    transition: opacity 100ms ease-in-out;
+
+    &.btn-body--entered {
+      opacity: 0;
+    }
+
+    &.btn-body--entering {
+      opacity: 1;
+    }
+  }
+}

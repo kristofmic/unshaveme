@@ -2,8 +2,10 @@ import { Router } from 'express';
 import conf from 'nconf';
 
 import reactServer from '../lib/react_server';
-
 import { notFound } from '../lib/error';
+
+import Main from '../client/components/Main';
+import { createStore } from '../client/store';
 
 const manifest = require('../public/manifest.json');
 
@@ -20,7 +22,7 @@ function defaultRoute(req, res, next) {
   }
 
   if (SERVER_RENDER) {
-    const body = reactServer();
+    const body = reactServer(Main, { store: createStore() });
     return renderDefaultRoute(res, { body });
   }
 
@@ -31,13 +33,13 @@ function renderDefaultRoute(res, locals) {
   res.status(200).render(
     'main.ejs',
     Object.assign({}, locals, {
-      // css: [manifest['main.css']],
-      css: [],
+      css: [manifest['main.css']],
       js: [
         manifest['runtime~main.js'],
         manifest['vendors.js'],
         manifest['main.js'],
       ],
+      env: process.env.NODE_ENV,
     })
   );
 }

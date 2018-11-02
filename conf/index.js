@@ -1,10 +1,8 @@
 const path = require('path');
 const nconf = require('nconf');
 
-const { CONFIG } = process.env;
-
 function init() {
-  const configEnvironment = CONFIG || 'development';
+  const configEnvironment = process.env.CONFIG || 'development';
   const configFiles = [`${configEnvironment}.json`, 'default.json'];
 
   nconf.env();

@@ -1,28 +1,45 @@
 const { createStore: createReduxStore } = require('redux');
 
 const initialState = {
+  error: undefined,
   loading: false,
-  whoAmI: 'Groot',
+  number: '',
+  result: undefined,
 };
 
 function reducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case 'IAM':
-      return Object.assign({}, state, {
+    case 'SET_NUMBER':
+      return {
+        ...state,
+        number: payload,
+      };
+    case 'TEXT_LINK':
+      return {
+        ...state,
+        loading: true,
+        error: undefined,
+        result: undefined,
+      };
+    case 'TEXT_LINK_SENT':
+      return {
+        ...state,
         loading: false,
-        whoAmI: payload,
-      });
+        result: payload,
+      };
+    case 'TEXT_LINK_ERROR':
+      return {
+        ...state,
+        loading: false,
+        error: payload,
+      };
     default:
       return state;
   }
 }
 
-function createStore() {
+export function createStore() {
   return createReduxStore(reducer);
 }
-
-module.exports = {
-  createStore,
-};

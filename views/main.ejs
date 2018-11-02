@@ -2,16 +2,25 @@
 <html lang="en">
 
 <head>
-  <%- include('./partials/_head', { css: css, title: 'Unshave.me' })%>
+  <%- include('./partials/_head', { css: css, title: 'Unshave Me', env: env })%>
 
   <!-- Third Party Javascript
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90421560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90421560-1');
+</script>
 
 <body>
   <%- include ./partials/_body %>
 
-  <%- include('./partials/_scripts', { js: js }) %>
+  <%- include('./partials/_scripts', { js: js, env: env }) %>
 
   <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

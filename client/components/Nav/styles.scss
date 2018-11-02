@@ -1,0 +1,8 @@
+nav.navbar {
+  box-shadow: none;
+  transition: 0.125s box-shadow ease-in-out;
+
+  &.navbar--sticky {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.16);
+  }
+}

@@ -1,0 +1,77 @@
+#about {
+  background-image: url('http://d30am0anjtu1dn.cloudfront.net/images/Ellipse.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 9rem;
+  padding-top: 4.5rem;
+
+  .btn.btn-secondary {
+    &.rounded-circle {
+      height: 3rem;
+      width: 3rem;
+
+      i {
+        font-size: 1.4rem;
+        line-height: 2.25rem;
+      }
+    }
+
+    &.social-link--medium-m {
+      background-color: #03a87c;
+      border-color: #03a87c;
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #018f69;
+        border-color: #018f69;
+      }
+    }
+
+    &.social-link--twitter {
+      background-color: #1da1f2;
+      border-color: #1da1f2;
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #006dbf;
+        border-color: #006dbf;
+      }
+    }
+
+    &.social-link--linkedin-in {
+      background-color: #0077b5;
+      border-color: #0077b5;
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #006097;
+        border-color: #006097;
+      }
+    }
+
+    &.social-link--github {
+      background-color: #586069;
+      border-color: #586069;
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #0366d6;
+        border-color: #0366d6;
+      }
+    }
+  }
+
+  .about-image {
+    height: 11.25rem;
+    width: 11.25rem;
+    background-color: #f7f5f1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 36%;
+  }
+
+  .card {
+    border: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+}

@@ -1,0 +1,78 @@
+$body-bg: #fff;
+$body-color: #111;
+$input-placeholder-color: #a9a9a9;
+
+$font-family-sans-serif: 'Lato', sans-serif;
+
+$theme-colors: (
+  'primary': #e57002,
+  'secondary': #48c1f5,
+  'dark': #262524,
+);
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  font-family: 'Merriweather', serif;
+}
+
+.fs-h4 {
+  font-size: 2rem;
+}
+
+.fs-5r {
+  font-size: 5.5rem;
+}
+
+.form-control {
+  border-radius: 0.15rem;
+}
+
+.btn {
+  border-radius: 0.3rem;
+}
+
+.modal {
+  &.show {
+    .modal-dialog {
+      transform: translate(0, 25%);
+    }
+  }
+
+  .modal-content {
+    border: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    border-radius: 0.15rem;
+  }
+}
+
+.modal-backdrop {
+  background-color: #fff;
+
+  &.show {
+    opacity: 0.8;
+  }
+}
+
+.placeholder-image {
+  max-width: 100%;
+}
+
+@include media-breakpoint-down(sm) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .form-control {
+    text-align: center;
+  }
+}
