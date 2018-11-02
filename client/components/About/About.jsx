@@ -16,6 +16,7 @@ const PEOPLE = [
     ],
   },
   {
+    image: 'http://d30am0anjtu1dn.cloudfront.net/images/yosun_kissy.jpg',
     name: 'Yosun Chang',
     position: 'AR Engineering',
     socialLinks: [
