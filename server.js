@@ -10,6 +10,7 @@ import * as error from './lib/error';
 
 // Create Express server
 const server = express();
+server.set('trust proxy', true);
 
 // Setup security
 server.use(helmet());

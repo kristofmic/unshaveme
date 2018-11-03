@@ -17,9 +17,9 @@ Happy unshaving :)
 const router = new Router();
 
 router.post('/text', textLink);
+router.get('/headers', reviewHeaders);
 
 function textLink(req, res, next) {
-  console.log('req.headers', req.headers);
   if (!req.headers.origin || !req.headers.origin.includes(HOST)) {
     const notAllowed = new Error('Not allowed :(');
     notAllowed.status = 401;
@@ -36,6 +36,12 @@ function textLink(req, res, next) {
       logger.error(err);
       next(err);
     });
+}
+
+function reviewHeaders(req, res) {
+  res.status(200).json({
+    headers: req.headers,
+  });
 }
 
 export default router;
