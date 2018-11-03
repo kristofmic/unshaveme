@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import morgan from 'morgan';
 
-import httpsRedirect from './lib/https_redirect';
+import * as middleware from './lib/middleware';
 import * as controllers from './controllers';
 import * as error from './lib/error';
 
@@ -34,10 +34,9 @@ server.set('views', path.join(__dirname, 'views'));
 server.set('view engine', 'ejs');
 
 // Routes and controllers
-server.use('*', httpsRedirect);
-server.use('/api', controllers.api);
+server.use('/api', middleware.httpsRedirect, controllers.api);
 server.use('/health', controllers.health);
-server.use('/', controllers.main);
+server.use('/', middleware.httpsRedirect, controllers.main);
 server.use(error.notFound);
 server.use(error.handleError);
 

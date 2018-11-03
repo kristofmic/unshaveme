@@ -17,7 +17,6 @@ Happy unshaving :)
 const router = new Router();
 
 router.post('/text', textLink);
-router.get('/headers', reviewHeaders);
 
 function textLink(req, res, next) {
   if (!req.headers.origin || !req.headers.origin.includes(HOST)) {
@@ -36,12 +35,6 @@ function textLink(req, res, next) {
       logger.error(err);
       next(err);
     });
-}
-
-function reviewHeaders(req, res) {
-  res.status(200).json({
-    headers: req.headers,
-  });
 }
 
 export default router;
