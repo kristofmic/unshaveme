@@ -7,7 +7,7 @@ function Footer() {
       className="bg-dark d-flex flex-column align-items-center justify-content-center py-5">
       <img
         className="mb-1"
-        src="http://d30am0anjtu1dn.cloudfront.net/images/app_icon.svg"
+        src="https://d30am0anjtu1dn.cloudfront.net/images/app_icon.svg"
         height="96"
         width="96"
         alt="mustache icon"

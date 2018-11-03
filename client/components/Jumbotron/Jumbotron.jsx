@@ -14,7 +14,7 @@ function Jumbotron({ isModalVisible, hideModal, nodeRef, result, number }) {
           <div className="col-md-9 col-12 px-0">
             <img
               className="mb-3 mb-md-4 mw-100"
-              src="http://d30am0anjtu1dn.cloudfront.net/images/illustration@2x.jpg"
+              src="https://d30am0anjtu1dn.cloudfront.net/images/illustration@2x.jpg"
               alt="Man selecting beard through unshave me app"
             />
           </div>

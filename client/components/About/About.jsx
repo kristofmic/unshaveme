@@ -4,7 +4,7 @@ import AboutPerson from './AboutPerson';
 
 const PEOPLE = [
   {
-    image: 'http://d30am0anjtu1dn.cloudfront.net/images/chris_mustache.jpg',
+    image: 'https://d30am0anjtu1dn.cloudfront.net/images/chris_mustache.jpg',
     name: 'Chris Hourihan',
     position: 'Web Engineering',
     socialLinks: [
@@ -16,7 +16,7 @@ const PEOPLE = [
     ],
   },
   {
-    image: 'http://d30am0anjtu1dn.cloudfront.net/images/yosun_kissy.jpg',
+    image: 'https://d30am0anjtu1dn.cloudfront.net/images/yosun_kissy.jpg',
     name: 'Yosun Chang',
     position: 'AR Engineering',
     socialLinks: [
@@ -26,7 +26,7 @@ const PEOPLE = [
     ],
   },
   {
-    image: 'http://d30am0anjtu1dn.cloudfront.net/images/zack_beard.jpg',
+    image: 'https://d30am0anjtu1dn.cloudfront.net/images/zack_beard.jpg',
     name: 'Zack Hargett',
     position: 'Design & Business',
     socialLinks: [

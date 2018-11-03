@@ -10,7 +10,7 @@
 
 <% js.forEach(function(bundle) { %>
 <% if (env === "production") { %>
-<script type="text/javascript" src="http://d30am0anjtu1dn.cloudfront.net/<%= bundle %>" charset="utf-8"></script>
+<script type="text/javascript" src="https://d30am0anjtu1dn.cloudfront.net/<%= bundle %>" charset="utf-8"></script>
 <% } else { %>
 <script type="text/javascript" src="/public/<%= bundle %>" charset="utf-8"></script>
 <% } %>

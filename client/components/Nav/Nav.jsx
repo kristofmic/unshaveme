@@ -49,13 +49,13 @@ class Nav extends PureComponent {
         <a className="navbar-brand ml-md-5 mx-auto" href="#jumbotron">
           <img
             className="d-none d-md-block"
-            src="http://d30am0anjtu1dn.cloudfront.net/images/logo.svg"
+            src="https://d30am0anjtu1dn.cloudfront.net/images/logo.svg"
             width="88"
             alt="Mustache logo"
           />
           <img
             className="d-md-none"
-            src="http://d30am0anjtu1dn.cloudfront.net/images/logo.svg"
+            src="https://d30am0anjtu1dn.cloudfront.net/images/logo.svg"
             width="108"
             alt="Mustache logo"
           />

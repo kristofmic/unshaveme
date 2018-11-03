@@ -1,6 +1,4 @@
 {
   "health": "dev",
-  "host": "localhost:8001",
-  "origin": "http://localhost:8001",
-  "originWWW": "http://www.localhost:8001"
+  "host": "localhost:8001"
 }

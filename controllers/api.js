@@ -4,13 +4,12 @@ import conf from 'nconf';
 import { logger } from '../lib/logger';
 import { sendMessage } from '../lib/twilio';
 
-const ORIGIN = conf.get('origin');
-const ORIGIN_WWW = conf.get('originWWW');
+const HOST = conf.get('host');
 
 const MESSAGE = `
-iOS: http://bit.ly/unshave
+iOS: https://bit.ly/unshave
 
-Android: http://bit.ly/unshaveandroid
+Android: https://bit.ly/unshaveandroid
 
 Happy unshaving :)
 `;
@@ -21,7 +20,7 @@ router.post('/text', textLink);
 
 function textLink(req, res, next) {
   console.log('req.headers', req.headers);
-  if (req.headers.origin !== ORIGIN && req.headers.origin !== ORIGIN_WWW) {
+  if (!req.headers.origin || !req.headers.origin.includes(HOST)) {
     const notAllowed = new Error('Not allowed :(');
     notAllowed.status = 401;
     return next(notAllowed);
