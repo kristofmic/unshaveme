@@ -4,6 +4,7 @@ import compression from 'compression';
 import bodyParser from 'body-parser';
 import path from 'path';
 import morgan from 'morgan';
+import conf from 'nconf';
 
 import * as controllers from './controllers';
 import * as error from './lib/error';
@@ -33,6 +34,13 @@ server.set('views', path.join(__dirname, 'views'));
 server.set('view engine', 'ejs');
 
 // Routes and controllers
+if (conf.get('forceHTTPS')) {
+  server.use('*', (req, res) => {
+    if (req.get('x-forwarded-proto') !== 'https') {
+      res.redirect(301, `https://www.${conf.get('host')}${req.originalUrl}`);
+    }
+  });
+}
 server.use('/api', controllers.api);
 server.use('/health', controllers.health);
 server.use('/', controllers.main);

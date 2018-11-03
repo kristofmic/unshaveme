@@ -1,4 +1,5 @@
 {
   "health": "dev",
-  "host": "localhost:8001"
+  "host": "localhost:8001",
+  "forceHTTPS": false
 }
