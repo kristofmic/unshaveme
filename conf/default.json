@@ -1,3 +1,4 @@
 {
-  "serverRender": true
+  "serverRender": true,
+  "forceHTTPS": true
 }
