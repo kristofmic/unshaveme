@@ -45,7 +45,7 @@ function About() {
     <div id="about">
       <div className="container d-flex flex-column justify-content-center align-items-center">
         <div className="row justify-content-center">
-          <div className="col-12 col-md-8">
+          <div className="col-10 col-md-8">
             <p className="h1 text-center font-weight-bold mb-3">About</p>
             <p className="text-center mb-5">
               We created Unshave to be a fun way to see what you would look like

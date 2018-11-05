@@ -25,22 +25,33 @@ function Jumbotron({ isModalVisible, hideModal, nodeRef, result, number }) {
               This November, see yourself with facial hair before you grow it
               out.
             </h1>
-            <p className="text-center mb-3 mb-md-4">
-              <span className="d-none d-md-block">
-                See yourself with facial hair before you grow it out.
-              </span>
-              Be warned: it's freakishly real.
-            </p>
-            {result && (
-              <div className="d-flex justify-content-center align-items-center pt-2 pb-4">
-                <i className="fas fa-check-circle text-success fs-h4 mb-0 mr-2" />
-                <p className="mb-0">
-                  <strong className="mr-2">Link sent!</strong>
-                  <span>{`We sent a download link to ${number}`}</span>
-                </p>
-              </div>
-            )}
-            {!result && <TextLinkForm />}
+            <div className="d-none d-md-block">
+              <p className="text-center mb-3 mb-md-4">
+                See yourself with facial hair before you grow it out. Be warned:
+                it's freakishly real.
+              </p>
+              {result && (
+                <div className="d-flex justify-content-center align-items-center pt-2 pb-4">
+                  <i className="fas fa-check-circle text-success fs-h4 mb-0 mr-2" />
+                  <p className="mb-0">
+                    <strong className="mr-2">Link sent!</strong>
+                    <span>{`We sent a download link to ${number}`}</span>
+                  </p>
+                </div>
+              )}
+              {!result && <TextLinkForm />}
+            </div>
+            <div className="d-block d-md-none d-flex flex-column align-items-center">
+              <p className="text-center text-muted mb-5 mb-md-4">
+                Be warned: it's freakishly real.
+              </p>
+              <a href="https://bit.ly/unshave">
+                <img src="/public/images/download_app_store.svg" height="90" />
+              </a>
+              <a href="https://bit.ly/unshaveandroid">
+                <img src="/public/images/google-play-badge.png" height="120" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
