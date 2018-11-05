@@ -46,10 +46,10 @@ function Jumbotron({ isModalVisible, hideModal, nodeRef, result, number }) {
                 Be warned: it's freakishly real.
               </p>
               <a href="https://bit.ly/unshave">
-                <img src="/public/images/download_app_store.svg" height="90" />
+                <img src="https://d30am0anjtu1dn.cloudfront.net/images/download_app_store.svg" height="90" />
               </a>
               <a href="https://bit.ly/unshaveandroid">
-                <img src="/public/images/google-play-badge.png" height="120" />
+                <img src="https://d30am0anjtu1dn.cloudfront.net/images/google-play-badge.png" height="120" />
               </a>
             </div>
           </div>
